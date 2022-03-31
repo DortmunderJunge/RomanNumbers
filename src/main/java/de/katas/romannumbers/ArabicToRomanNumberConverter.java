@@ -6,6 +6,9 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber >= 1 && arabicNumber <= 3) {
             return "I".repeat(arabicNumber);
         }
+        if (arabicNumber == 4) {
+            return "IV";
+        }
         if (arabicNumber == 5) {
             return "V";
         }

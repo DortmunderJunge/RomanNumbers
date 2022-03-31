@@ -40,7 +40,8 @@ class ArabicToRomanNumberConverterTest {
                 Arguments.arguments(500, "D"),
                 Arguments.arguments(1000, "M"),
                 Arguments.arguments(2, "II"),
-                Arguments.arguments(3, "III")
+                Arguments.arguments(3, "III"),
+                Arguments.arguments(4, "IV")
         );
     }
 
