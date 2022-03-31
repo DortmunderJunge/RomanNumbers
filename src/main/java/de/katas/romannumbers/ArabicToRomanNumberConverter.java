@@ -3,14 +3,12 @@ package de.katas.romannumbers;
 public class ArabicToRomanNumberConverter {
 
     public String convert(final int arabicNumber) {
-        if (arabicNumber == 1) {
-            return "I";
-        }
-        if (arabicNumber == 2) {
-            return "II";
-        }
-        if (arabicNumber == 3) {
-            return "III";
+        if (arabicNumber >= 1 && arabicNumber <= 3) {
+            final StringBuilder romanNumberBuilder = new StringBuilder();
+            for (int i = 0; i < arabicNumber; i++) {
+                romanNumberBuilder.append("I");
+            }
+            return romanNumberBuilder.toString();
         }
         if (arabicNumber == 5) {
             return "V";
