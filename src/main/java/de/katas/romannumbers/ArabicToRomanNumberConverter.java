@@ -3,14 +3,11 @@ package de.katas.romannumbers;
 public class ArabicToRomanNumberConverter {
 
     public String convert(final int arabicNumber) {
-        if (arabicNumber >= 1 && arabicNumber <= 3) {
-            return "I".repeat(arabicNumber);
+        if (arabicNumber > 0 && arabicNumber < 9 && arabicNumber != 4) {
+            return convert(arabicNumber, "");
         }
         if (arabicNumber == 4) {
             return "IV";
-        }
-        if (arabicNumber >= 5 && arabicNumber <=8) {
-            return "V" + "I".repeat(arabicNumber - 5);
         }
         if (arabicNumber == 9) {
             return "IX";
@@ -31,5 +28,12 @@ public class ArabicToRomanNumberConverter {
             return "M";
         }
         throw new IllegalArgumentException(String.format("%d kann ich leider nicht konvertieren :( ", arabicNumber));
+    }
+
+    private String convert(final int arabicNumber, final String romanNumber) {
+        if (arabicNumber <=3) {
+            return romanNumber + "I".repeat(arabicNumber);
+        }
+        return convert(arabicNumber - 5, "V");
     }
 }
