@@ -1,6 +1,12 @@
 package de.katas.romannumbers;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,30 +14,19 @@ class ArabicToRomanNumberConverterTest {
 
     private ArabicToRomanNumberConverter sut = new ArabicToRomanNumberConverter();
 
-    @Test
-    void shouldConvert1ToI() {
-        final int input = 1;
+    @ParameterizedTest(name="{index} - should convert {0} to {1}")
+    @MethodSource("provideNumbers")
+    void shouldConvertArabicNumberToRomanNumber(final int arabicNumber, final String expectedRomanNumber) {
+        final String romanNumber = sut.convert(arabicNumber);
 
-        final String romanNumber = sut.convert(input);
-
-        assertThat(romanNumber).isEqualTo("I");
+        assertThat(romanNumber).isEqualTo(expectedRomanNumber);
     }
 
-    @Test
-    void shouldConvert5ToV() {
-        final int input = 5;
-
-        final String romanNumber = sut.convert(input);
-
-        assertThat(romanNumber).isEqualTo("V");
-    }
-
-    @Test
-    void shouldConvert10ToX() {
-        final int input = 10;
-
-        final String romanNumber = sut.convert(input);
-
-        assertThat(romanNumber).isEqualTo("X");
+    static Stream<Arguments> provideNumbers() {
+        return Stream.of(
+                Arguments.arguments(1, "I"),
+                Arguments.arguments(5, "V"),
+                Arguments.arguments(10, "X")
+        );
     }
 }
