@@ -9,8 +9,11 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber == 4) {
             return "IV";
         }
-        if (arabicNumber == 5) {
-            return "V";
+        if (arabicNumber >= 5 && arabicNumber <=8) {
+            return "V" + "I".repeat(arabicNumber - 5);
+        }
+        if (arabicNumber == 9) {
+            return "IX";
         }
         if (arabicNumber == 10) {
             return "X";
