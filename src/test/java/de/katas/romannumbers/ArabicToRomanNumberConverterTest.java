@@ -1,5 +1,6 @@
 package de.katas.romannumbers;
 
+import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ArabicToRomanNumberConverterTest {
 
@@ -38,5 +40,16 @@ class ArabicToRomanNumberConverterTest {
                 Arguments.arguments(500, "D"),
                 Arguments.arguments(1000, "M")
         );
+    }
+
+    @Test
+    void shouldThrowForUnsupportedNumbers() {
+        final int arabicNumber = 0;
+
+        final ThrowableAssert.ThrowingCallable methodUnderTest = () -> sut.convert(arabicNumber);
+
+        assertThatThrownBy(methodUnderTest)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("0 kann ich leider nicht konvertieren");
     }
 }

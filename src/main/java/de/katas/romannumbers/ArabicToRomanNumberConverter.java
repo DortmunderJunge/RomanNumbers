@@ -6,6 +6,9 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber == 1) {
             return "I";
         }
+        if (arabicNumber == 5) {
+            return "V";
+        }
         if (arabicNumber == 10) {
             return "X";
         }
@@ -21,6 +24,6 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber == 1000) {
             return "M";
         }
-        return "V";
+        throw new IllegalArgumentException(String.format("%d kann ich leider nicht konvertieren :( ", arabicNumber));
     }
 }
