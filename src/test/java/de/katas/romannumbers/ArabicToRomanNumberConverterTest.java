@@ -25,4 +25,13 @@ class ArabicToRomanNumberConverterTest {
 
         assertThat(romanNumber).isEqualTo("V");
     }
+
+    @Test
+    void shouldConvert10ToX() {
+        final int input = 10;
+
+        final String romanNumber = sut.convert(input);
+
+        assertThat(romanNumber).isEqualTo("X");
+    }
 }
