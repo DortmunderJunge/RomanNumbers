@@ -31,9 +31,9 @@ public class ArabicToRomanNumberConverter {
     }
 
     private String convert(final int arabicNumber, final String romanNumber) {
-        if (arabicNumber <=3) {
-            return romanNumber + "I".repeat(arabicNumber);
+        if (arabicNumber >= 5 && arabicNumber < 9) {
+            return convert(arabicNumber - 5, "V");
         }
-        return convert(arabicNumber - 5, "V");
+        return romanNumber + "I".repeat(arabicNumber);
     }
 }
