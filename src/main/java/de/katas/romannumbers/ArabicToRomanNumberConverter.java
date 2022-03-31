@@ -4,11 +4,7 @@ public class ArabicToRomanNumberConverter {
 
     public String convert(final int arabicNumber) {
         if (arabicNumber >= 1 && arabicNumber <= 3) {
-            final StringBuilder romanNumberBuilder = new StringBuilder();
-            for (int i = 0; i < arabicNumber; i++) {
-                romanNumberBuilder.append("I");
-            }
-            return romanNumberBuilder.toString();
+            return "I".repeat(arabicNumber);
         }
         if (arabicNumber == 5) {
             return "V";
