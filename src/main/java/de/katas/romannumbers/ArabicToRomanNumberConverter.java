@@ -9,6 +9,18 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber == 10) {
             return "X";
         }
+        if (arabicNumber == 50) {
+            return "L";
+        }
+        if (arabicNumber == 100) {
+            return "C";
+        }
+        if (arabicNumber == 500) {
+            return "D";
+        }
+        if (arabicNumber == 1000) {
+            return "M";
+        }
         return "V";
     }
 }
