@@ -22,7 +22,7 @@ public class ArabicToRomanNumberConverter {
     }
 
     private String convert(final int arabicNumber, final String romanNumber) {
-        if (arabicNumber >= 10 && arabicNumber <= 19) {
+        if (arabicNumber >= 10) {
             return convert(arabicNumber - 10, romanNumber + "X");
         }
         if (arabicNumber > 8 && arabicNumber < 10) {

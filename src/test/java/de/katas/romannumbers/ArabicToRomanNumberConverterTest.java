@@ -45,7 +45,17 @@ class ArabicToRomanNumberConverterTest {
                 Arguments.arguments(6, "VI"),
                 Arguments.arguments(7, "VII"),
                 Arguments.arguments(8, "VIII"),
-                Arguments.arguments(9, "IX")
+                Arguments.arguments(9, "IX"),
+                Arguments.arguments(11, "XI"),
+                Arguments.arguments(12, "XII"),
+                Arguments.arguments(13, "XIII"),
+                Arguments.arguments(14, "XIV"),
+                Arguments.arguments(15, "XV"),
+                Arguments.arguments(16, "XVI"),
+                Arguments.arguments(17, "XVII"),
+                Arguments.arguments(18, "XVIII"),
+                Arguments.arguments(19, "XIX"),
+                Arguments.arguments(20, "XX")
         );
     }
 
