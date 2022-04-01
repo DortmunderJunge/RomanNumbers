@@ -3,11 +3,8 @@ package de.katas.romannumbers;
 public class ArabicToRomanNumberConverter {
 
     public String convert(final int arabicNumber) {
-        if (arabicNumber > 0 && arabicNumber < 50) {
+        if (arabicNumber > 0 && arabicNumber < 100) {
             return convert(arabicNumber, "");
-        }
-        if (arabicNumber == 50) {
-            return "L";
         }
         if (arabicNumber == 100) {
             return "C";
@@ -22,6 +19,12 @@ public class ArabicToRomanNumberConverter {
     }
 
     private String convert(final int arabicNumber, final String romanNumber) {
+        if (arabicNumber >= 50) {
+            return convert(arabicNumber - 50, romanNumber + "L");
+        }
+        if (arabicNumber >= 40) {
+            return convert(arabicNumber + 10, romanNumber + "X");
+        }
         if (arabicNumber >= 10) {
             return convert(arabicNumber - 10, romanNumber + "X");
         }
