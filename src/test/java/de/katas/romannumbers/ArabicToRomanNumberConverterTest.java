@@ -30,6 +30,7 @@ class ArabicToRomanNumberConverterTest {
         assertThat(romanNumber).isEqualTo(expectedRomanNumber);
     }
 
+    // https://www.cuemath.com/numbers/roman-numerals/
     static Stream<Arguments> provideNumbers() {
         return Stream.of(
                 Arguments.of(1, "I"),
@@ -56,7 +57,11 @@ class ArabicToRomanNumberConverterTest {
                 Arguments.of(18, "XVIII"),
                 Arguments.of(19, "XIX"),
                 Arguments.of(20, "XX"),
-                Arguments.of(40, "XL")
+                Arguments.of(40, "XL"),
+                Arguments.of(44, "XLIV"),
+                Arguments.of(48, "XLVIII"),
+                Arguments.of(49, "XLIX"),
+                Arguments.of(89, "LXXXIX")
         );
     }
 

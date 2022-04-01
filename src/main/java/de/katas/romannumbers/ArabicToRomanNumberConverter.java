@@ -19,6 +19,8 @@ public class ArabicToRomanNumberConverter {
     }
 
     private String convert(final int arabicNumber, final String romanNumber) {
+        // 2 be continued...
+
         if (arabicNumber >= 50) {
             return convert(arabicNumber - 50, romanNumber + "L");
         }
