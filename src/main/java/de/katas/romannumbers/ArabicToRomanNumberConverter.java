@@ -3,17 +3,8 @@ package de.katas.romannumbers;
 public class ArabicToRomanNumberConverter {
 
     public String convert(final int arabicNumber) {
-        if (arabicNumber > 0 && arabicNumber < 9 && arabicNumber != 4) {
+        if (arabicNumber > 0 && arabicNumber < 50) {
             return convert(arabicNumber, "");
-        }
-        if (arabicNumber == 4) {
-            return "IV";
-        }
-        if (arabicNumber == 9) {
-            return "IX";
-        }
-        if (arabicNumber == 10) {
-            return "X";
         }
         if (arabicNumber == 50) {
             return "L";
@@ -31,8 +22,17 @@ public class ArabicToRomanNumberConverter {
     }
 
     private String convert(final int arabicNumber, final String romanNumber) {
-        if (arabicNumber >= 5 && arabicNumber < 9) {
-            return convert(arabicNumber - 5, "V");
+        if (arabicNumber >= 10 && arabicNumber <= 19) {
+            return convert(arabicNumber - 10, romanNumber + "X");
+        }
+        if (arabicNumber > 8 && arabicNumber < 10) {
+            return convert(arabicNumber + 1, romanNumber + "I");
+        }
+        if (arabicNumber >= 5 && arabicNumber <= 8) {
+            return convert(arabicNumber - 5, romanNumber + "V");
+        }
+        if (arabicNumber > 3 && arabicNumber < 5) {
+            return convert(arabicNumber + 1, romanNumber + "I");
         }
         return romanNumber + "I".repeat(arabicNumber);
     }
