@@ -61,7 +61,8 @@ class ArabicToRomanNumberConverterTest {
                 Arguments.of(44, "XLIV"),
                 Arguments.of(48, "XLVIII"),
                 Arguments.of(49, "XLIX"),
-                Arguments.of(89, "LXXXIX")
+                Arguments.of(89, "LXXXIX"),
+                Arguments.of(90, "XC")
         );
     }
 
