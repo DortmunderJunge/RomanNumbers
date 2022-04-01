@@ -25,13 +25,13 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber >= 10) {
             return convert(arabicNumber - 10, romanNumber + "X");
         }
-        if (arabicNumber > 8 && arabicNumber < 10) {
+        if (arabicNumber == 9) {
             return convert(arabicNumber + 1, romanNumber + "I");
         }
-        if (arabicNumber >= 5 && arabicNumber <= 8) {
+        if (arabicNumber >= 5) {
             return convert(arabicNumber - 5, romanNumber + "V");
         }
-        if (arabicNumber > 3 && arabicNumber < 5) {
+        if (arabicNumber == 4) {
             return convert(arabicNumber + 1, romanNumber + "I");
         }
         return romanNumber + "I".repeat(arabicNumber);
